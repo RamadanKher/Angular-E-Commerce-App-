@@ -1,0 +1,80 @@
+<header id="navBar">
+    <div class="heder text-white  ">
+        <div class="row py-1  m-0">
+
+            <div class="col-lg-2 col-md-2 col-sm-3">
+                <ul class="p-0 m-0 d-flex justify-content-around  ">
+                    <li>English</li>
+                    <li>USD</li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-4 ms-auto">
+                <ul class="p-0 m-0 d-flex justify-content-around">
+                    <li>Help</li>
+                    <li>Join Us</li>
+                    <li  >Sign In</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <nav class="nav align-items-center   ">
+        <div class="logo">
+            <a  class="navbar--logo fw-bolder fs-5 mainColor" href="#"><img src="../../../../assets/imges/logo.png"
+                    alt=""></a>
+        </div>
+        <div id="LinksList" class="Links--list  me-auto  " [class.open]="varibleNavbar">
+            <a  class="link" href="index.html"><span>Home</span></a>
+            <a class="link" href="about.html"> <span>Shop</span></a>
+            <a class="link" href="services.html"> <span>Pages</span></a>
+            <a class="link" href="Blog.html"><span>About </span></a>
+            <a class="link" href="Blog.html"><span>Blog </span></a>
+            <a class="link" href="Blog.html"><span>Contact </span></a>
+
+            <input class="input-elevated" type="text" placeholder="What are you looking for ?">
+        </div>
+        <div class="ms-auto cart--icon  position-relativ">
+            <i [routerLink]="['/cart']" routerLinkActive="router-link-active"  class="fa-solid text-muted  fs-4 fa-cart-plus   "></i>
+            <!-- <span class="badge  position-absolute  rounded-circle">1</span> -->
+
+        </div>
+        <label class="ChangeTheme" for="ChangeTheme">
+            <input class="d-none" type="checkbox" id="ChangeTheme" /> <span class="slide"></span>
+        </label>
+
+        <div id="toggleMenu" class="toggle-menu" (click)="openToggelMenu()" [class.open]="varibleNavbar">
+            <span class="rounded-5"></span>
+            <span class="rounded-5"></span>
+            <span class="rounded-5"></span>
+        </div>
+    </nav>
+
+</header>
+<div class=" slider text-center shadow">
+    <div class="container">
+        <div id="carouselExampleControls" class="carousel slide " data-bs-ride="carousel">
+            <i data-bs-target="#carouselExampleControls" data-bs-slide="prev"
+                class=" carousel-control-next fa-solid fa-arrow-right-long"></i>
+            <div class="carousel-inner  ">
+                <div class="carousel-item active ">
+                    <p class="m-0 text-white fw-bold"> STUDENT NOW GET 10% OFF : </p>
+
+                </div>
+                <div class="carousel-item">
+                    <p class="m-0  text-white fw-bold"> STUDENT NOW GET 10% OFF : </p>
+
+
+                </div>
+                    
+                    <i    data-bs-target="#carouselExampleControls" data-bs-slide="next"
+                    class=" carousel-control-prev fa-solid fa-arrow-left-long" ></i>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+

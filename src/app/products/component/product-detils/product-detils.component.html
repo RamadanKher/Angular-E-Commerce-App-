@@ -1,0 +1,52 @@
+<section class="mt-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center">
+                <ngx-gallery [options]="galleryOptions" [images]="galleryImages" class="ngx-gallery "></ngx-gallery>
+            </div>
+            <div class="col-md-6">
+                <h2 class="">{{data.title}}</h2>
+                <h4> ${{data.price }}</h4>
+                <ngb-rating [rate]="data.rating"></ngb-rating> <small class="text-secondary fw-bold">
+                    {{data.rating}}</small>
+                <p class=" fw-bold">brand : {{data.brand}}</p>
+                <hr>
+                <p class=" fw-bold fs-4 text-primary">Description :</p>
+                <p class=" text-muted">{{data.description}}</p>
+                <ul class="icon-ul list-unstyled d-flex justify-content-between w-75">
+                    <li >
+                        <img src="../../../../assets/imges/icon-1.png" alt="icon">
+                        <p class="fw-bold mt-1">Easy Returns                        </p>
+                    </li>
+                    <li >
+                        <img src="../../../../assets/imges/icon-2.png" alt="icon">
+                        <p class="fw-bold mt-1">Easy Returns                        </p>
+                    </li>
+                    <li >
+                        <img src="../../../../assets/imges/icon-3.png" alt="icon">
+                        <p class="fw-bold mt-1">Easy Returns                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- section bg -->
+
+<div class="container  mt-5 rounded-4">
+    <div class="main">
+        <span class=" text-primary"> <i class="fa-solid fa-envelope text-white rounded-circle p-1 bg-primary"></i> Newsletter
+        </span>
+        <h2 class="py-2">Get weekly update
+        </h2>
+        <div class="form-floating mb-3 d-flex align-items-center flex-wrap">
+            <input type="email" class="form-control  w-50" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Email address</label>
+            <button class="ms-2 btn btn-dark px-3 py-3">Subscribe</button>
+          </div>
+          
+        
+    </div>
+     
+</div>
+ <!-- section bg end -->

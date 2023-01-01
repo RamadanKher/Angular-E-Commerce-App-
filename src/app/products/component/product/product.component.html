@@ -1,0 +1,29 @@
+<div class="cart--item border py-3 pt-0 rounded-4  position-relative">
+    <div class="img--cart " [routerLink]="['/detils', data.id]">
+        <img [src]="data.thumbnail" class="w-100 rounded-4 " alt="" srcset="">
+    </div>
+    <div class="cart-content text-center pt-2" [routerLink]="['/detils', data.id]">
+
+        <p class="m-0 product--title fw-bold"> {{data.title | slice:0:30}}</p>
+        <p class=" text-muted text-break">{{data.description | slice:0:55 }}...</p>
+        <p class=" fw-bold m-0"> {{data.price}}<i class="fa-light fa-dollar-sign "></i>
+        <p>
+        <div class="star">
+            <ngb-rating [rate]="data.rating"></ngb-rating> <small class="text-secondary fw-bold">
+                {{data.rating}}</small>
+        </div>
+    </div>
+    <div class="add text-center mt-3 d-flex justify-content-center">
+        <a *ngIf="!show" (click)=" show = true" class=" btn btn-primary px-3 me-2 " >Add to cart</a>
+
+        <input *ngIf="show"  type="number" [(ngModel)]="amount" min="1"  max="30" class="me-1 form-control w-25">
+        <a *ngIf="show" (click)="add()"  (click)="show= false" class=" btn btn-primary px-3 me-2 " >Add </a>
+        
+        <button type="button" class="btn btn-secondary me-2 " placement="top" ngbTooltip="product detils">
+            <i class="fa-solid fa-eye text-white"  [routerLink]="['/detils', data.id]" ></i>
+        </button>
+    </div>
+    <div class="dicount position-absolute ">
+        <a class="btn btn-primary px-2 py-0 rounded-3">{{data.discountPercentage | number:'1.0-0' }}% OFF </a>
+    </div>
+</div>

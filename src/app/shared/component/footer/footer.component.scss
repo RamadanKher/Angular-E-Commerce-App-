@@ -1,0 +1,25 @@
+
+
+footer {
+    &>.row {
+        img {
+            width: 50px;
+            height: 60px;
+        }
+    }
+}
+
+footer {
+    ul {
+
+        li {
+            padding: 5px 0;
+            color: #777777;
+            font-weight: 500;
+            font-size: 16px;
+        }
+    }
+    .fw-bold{
+        color: black !important;
+    }
+}

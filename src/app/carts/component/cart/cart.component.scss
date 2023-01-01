@@ -1,0 +1,22 @@
+i{
+    cursor: pointer;
+}
+
+ img{
+    width: 70px;
+    height: 70px;
+ } 
+  
+input[type="number"]{
+    outline: none !important;
+    box-shadow:none !important;
+}
+@media screen and (max-width:767px) {
+    .hide--class{
+        display: none;
+    }
+    .show--class{
+        display: block !important;
+    }
+   
+  }

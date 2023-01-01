@@ -1,0 +1,73 @@
+<div class="container mt-3">
+    <h3 class=" small mb-4 ">yuo have <span class="text-primary">{{productsCart.length}}</span> product in yuor cart</h3>
+    <div (click)="clearCart()" class=" text-end pb-1">
+
+        <span class=" text-danger">  <i class="fa-solid fa-calendar-xmark"></i> clear shoping cart</span>
+    </div>
+<div class="hide--class border-bottom border-top">
+    <ul class=" text-center list-unstyled d-flex align-content-center m-0 py-3  justify-content-around ">
+        <li class=" ">item</li>
+        <li>price</li>
+        <li>Quantity</li>
+        <li>Subtotal        </li>
+    </ul>
+</div>
+<div *ngFor="let item of productsCart let index = index" class="  row border-bottom align-items-center bg-light ">
+
+    <div class="col-md-4">
+        <div class="d-flex align-items-center py-3">
+            <img class="me-3" [src]="item.item.thumbnail" alt="">
+        <p class=" fw-bold">{{item.item.title}}</p>
+        
+        </div>
+    </div>
+    <div class="col-md-8 hide--class">
+        <div class="d-flex ">
+            <div class="col-md-3 ">
+               <h6>${{item.item.price}}</h6>
+            </div>
+           <div class="col-md-4 text-center">
+            <div class=" d-flex align-items-center justify-content-center">
+                <i (click)="minusamount(index)" class="fa-solid fa-minus p-2 bg-secondary text-white"></i>
+                <input [(ngModel)]="item.quantity" (change)="detecdChang()" type="number" class=" text-center form-control w-50 mx-auto">
+                <i (click)="plusamount(index)" class="fa-solid fa-plus p-2 bg-secondary  text-white"></i>
+            </div>
+           </div>
+           <div class="col-md-4  text-center">
+            <h6>${{item.item.price * item.quantity}}</h6>
+        </div>
+            
+        </div>
+    </div>
+    <!-- show in resposive -->
+    <div class="col-md-5 d-none show--class  mb-2">
+        <ul class="  list-unstyled">
+            <li class="py-1 border-bottom">price:</li>
+            <li class="py-1 border-bottom d-flex align-items-center ">Quantity:
+                <div class=" ms-2 w-50 d-flex align-items-center justify-content-center">
+                    <i class="fa-solid fa-minus p-2 bg-secondary text-white"></i>
+                    <input type="number" class=" form-control w-50 mx-auto">
+                    <i class="fa-solid fa-plus p-2 bg-secondary  text-white"></i>
+                </div>
+            </li>
+            <li class="py-1 border-bottom">Subtotal:</li>
+
+        </ul>
+    </div>
+  
+    <div (click)="removeItem(index)" class=" text-end  text-danger ">
+      <i  class="fa-regular fa-trash-can">   Remove  </i>      
+    </div>
+</div>
+ <hr>
+    <div class="w-25 ms-auto mt-4 py-2    text-center">
+       <p class=" fw-bold m-0"> total :  $ {{total}} </p>
+       
+        
+        </div>
+         <div class="w-25 ms-auto py-2 mb-2 bg-danger  text-white  text-center">
+         <a  (click)="orderCart()" class=" text-white" >    order now</a>
+        
+        </div>
+
+</div>

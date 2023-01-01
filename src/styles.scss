@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+    font-family: 'DM Sans', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+input{
+    outline: none !important;
+    box-shadow:none !important;
+}
+ul{
+    list-style: none;
+}
+// this for main bg section in footer
+.main {
+    background-image: url(/assets/imges/footer.jpg);
+    background-position: center center;
+    background-size: cover;
+    padding: 5rem 2rem;
+}

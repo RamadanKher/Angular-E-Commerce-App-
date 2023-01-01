@@ -1,0 +1,88 @@
+
+
+
+<section class="all--products">
+    <div class="container">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active " aria-current="page">Home</li>
+            <li class="breadcrumb-item active  text-primary" aria-current="page">My Account</li>
+        </ol>
+        <h2 class=" ">Explore All Products </h2>
+    </div>
+</section>
+
+
+<section class=" mt-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+
+                <app-select [data]="Categories" (selectdData)="filterCategories($event)"></app-select>
+
+            </div>
+
+            <div class="col-md-3 ms-auto mt-2">
+
+                <input class="input-elevated" (keyup)="serchProducts($event)" type="text"
+                    placeholder=" search products">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-7 ms-auto  ">
+                <div class=" ms-auto  ">
+                    <ul class="pagination mt-2 d-flex justify-content-end ">
+
+                        <li class="page-item" (click)="pagination(30,4)"><a class="page-link">1</a></li>
+                        <li class="page-item" (click)="pagination(30,30)"><a class="page-link">2</a></li>
+                        <li class="page-item" (click)="pagination(30,60)"><a class="page-link">3</a></li>
+                        <li class="page-item" (click)="pagination(30,40)"><a class="page-link">4</a></li>
+                        <li class="page-item">
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</section>
+<section>
+    <div class="container">
+        <div class="text-center mt-5" *ngIf="error">
+            <i class="fa-solid fa-triangle-exclamation text-danger fs-1"> </i>
+            <p class="fs-4 fw-bold"> No results found for <span class=" text-danger">({{serchValue}})</span></p>
+        </div>
+        <div class="row" *ngIf="!loding">
+
+            <div routerLink="/test" *ngFor="let item of products" 
+                routerLinkActive="router-link-active" class="col-lg-3 col-md-4 mt-4  prudactRow">
+                <app-product [data]="item" (item)="addToCart($event)"></app-product>
+            </div>
+        </div>
+    </div>
+    <div class=" text-center" *ngIf="loding">
+        <app-spiner></app-spiner>
+    </div>
+</section>
+<!-- section bg -->
+
+<div class="container  mt-5 rounded-4">
+    <div class="main">
+        <span class=" text-primary"> <i class="fa-solid fa-envelope text-white rounded-circle p-1 bg-primary"></i> Newsletter
+        </span>
+        <h2 class="py-2">Get weekly update
+        </h2>
+        <div class="form-floating mb-3 d-flex align-items-center flex-wrap">
+            <input type="email" class="form-control  w-50" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Email address</label>
+            <button class="ms-2 btn btn-dark px-3 py-3">Subscribe</button>
+          </div>
+          
+        
+    </div>
+     
+</div>
+ <!-- section bg end -->
